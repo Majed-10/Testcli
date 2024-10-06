@@ -38,7 +38,9 @@ jobs:
         
 # .github/linters/.super-linter.yml
 # Specify which linters to enable or disable
-         VALIDATE_JS: true
-         VALIDATE_PYTHON: true
-         VALIDATE_DOCKERFILE: true
-         DISABLE_LINTERS: markdown  # Disable specific linter (e.g., Markdown)
+env:
+  DEFAULT_BRANCH: main
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  # Ensure the super-linter uses the configuration in .super-linter.yml
+  VALIDATE_PYTHON_ISORT: true
+  FIX_PYTHON_ISORT: true # Disable specific linter (e.g., Markdown)
