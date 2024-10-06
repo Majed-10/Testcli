@@ -1,0 +1,3 @@
+DeprecationWarning
+print(n)]
+defds

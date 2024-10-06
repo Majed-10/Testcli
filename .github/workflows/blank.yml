@@ -7,8 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,3 +33,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+         
+        env:
+        
+# .github/linters/.super-linter.yml
+# Specify which linters to enable or disable
+         VALIDATE_JS: true
+         VALIDATE_PYTHON: true
+         VALIDATE_DOCKERFILE: true
+         DISABLE_LINTERS: markdown  # Disable specific linter (e.g., Markdown)
