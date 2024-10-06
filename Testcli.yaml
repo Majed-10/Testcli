@@ -1,0 +1,22 @@
+name: Testcli
+
+on:
+  pull_request:
+   branches:
+
+    - main
+
+
+jobs:
+ Testcli:
+ runs-on: ubuntu-latest
+ steps:
+  -uses: action/checkout@v2
+  -name: Readme Testcli
+  run: |
+
+     pwd
+     if [ ! -f Dockerfile]; then
+     exit 1 
+
+     fi
